@@ -1,13 +1,18 @@
+import React from "react";
+import { ToastContainer } from "react-toastify";
+
+import "../node_modules/react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
-function App() {
-  return (
-    <div className="app">
-      <main>
-        <h1>Hello, world!</h1>
-      </main>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="app">
+        <ToastContainer />
+        Give me something to do?!
+      </div>
+    );
+  }
 }
 
 export default App;
