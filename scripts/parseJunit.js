@@ -36,7 +36,7 @@ const parseAllFiles = async () => {
       passedSuites.push(testsuites[0].name);
     } else {
       let failed = testsuites.filter((ts) => !passed(ts));
-      failedSuites.push(failed[0].name);
+      failed.forEach((ts) => failed.push(ts.name));
     }
   }
 
