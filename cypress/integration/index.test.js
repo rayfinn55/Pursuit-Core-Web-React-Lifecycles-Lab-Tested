@@ -23,7 +23,7 @@ describe("Index", () => {
     cy.get("form").submit();
     cy.get("input").clear().type("go away");
     cy.get("form").submit();
-    cy.get("button").eq(2).click();
+    cy.get("#todos").find("button").eq(0).click();
     cy.get("#todos").contains("go away");
     cy.get(".Toastify__toast--error").contains("Todo deleted: say hello");
   });
