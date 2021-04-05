@@ -29,14 +29,13 @@ const parseAllFiles = async () => {
   for (const file of fileNames) {
     const report = await new Parser().parseXMLFile(file);
     const { testsuites } = report;
-
     let testFilePassed = testsuites.every((ts) => passed(ts));
 
     if (testFilePassed) {
       passedSuites.push(testsuites[0].name);
     } else {
       let failed = testsuites.filter((ts) => !passed(ts));
-      failed.forEach((ts) => failed.push(ts.name));
+      failed.forEach((ts) => failedSuites.push(ts.name));
     }
   }
 
